@@ -7,6 +7,7 @@ import com.cakil.spring.domain.exceptions.DatabaseDataIntegrityException;
 import com.cakil.spring.domain.exceptions.DatabaseEntityNotFoundException;
 import com.cakil.spring.domain.exceptions.DatabaseGeneralException;
 import com.cakil.spring.interfaces.repositories.BaseRepository;
+import com.cakil.spring.interfaces.util.Enum;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,7 +16,7 @@ import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
-public class BaseServiceImpl<T extends BaseRepository<E>, E extends AbstractBaseEntity> implements BaseService<E>, Loggable {
+public abstract class BaseServiceImpl<T extends BaseRepository<E>, E extends AbstractBaseEntity> implements BaseService<E>, Loggable {
 
 	private final T repository;
 
@@ -134,5 +135,4 @@ public class BaseServiceImpl<T extends BaseRepository<E>, E extends AbstractBase
 			throw new DatabaseGeneralException(e.getMessage());
 		}
 	}
-
 }

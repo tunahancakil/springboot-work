@@ -11,5 +11,7 @@ public interface CreditService extends BaseService<Credit> {
 	Integer calculateCreditLimit(Integer score, Integer income) throws DatabaseGeneralException;
 
 	void sendSMS(Credit credit) throws SmsException;
+
+	String getStatus(String identityNo, Integer income) throws DatabaseGeneralException;
 	
 }

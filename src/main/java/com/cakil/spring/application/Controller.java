@@ -7,6 +7,7 @@ import com.cakil.spring.application.service.CustomerService;
 import com.cakil.spring.application.service.impl.CreditResultDTOService;
 import com.cakil.spring.interfaces.model.CreditDTO;
 import com.cakil.spring.interfaces.model.CreditResultDTO;
+import com.cakil.spring.interfaces.util.Enum;
 import com.cakil.spring.interfaces.util.Enum.ApplicationStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,12 +30,12 @@ public class Controller extends BaseController {
 	private CustomerService customerService;
 
 	@PostMapping("/processGetScore")
-	public ResponseEntity<Object> processGetScor(@RequestBody CreditDTO creditDTO) {
+	public ResponseEntity<Object> processGetScore(@RequestBody CreditDTO creditDTO) {
 		Customer customer = new Customer(creditDTO.getName(), creditDTO.getSurname(), creditDTO.getIdentityNo(), creditDTO.getIncome(), creditDTO.getPhone());
 		customerService.save(customer);
 		Integer score = creditService.getScore(customer.getIdentityNo());
 		Integer creditLimit = creditService.calculateCreditLimit(score, customer.getIncome());
-		ApplicationStatus status = creditLimit.equals(0) ? ApplicationStatus.REJECTED : ApplicationStatus.APPROVE;
+		ApplicationStatus status = ApplicationStatus.valueOf(creditService.getStatus(customer.getIdentityNo(),customer.getIncome()));
 		Credit credit = new Credit(score, status, creditLimit, customer);
 		customer.addCredit(credit);
 		customerService.save(customer);
@@ -42,5 +43,4 @@ public class Controller extends BaseController {
 		CreditResultDTO creditResultDTO = creditResultDTOService.buildCreditResultDTO(customer.getIdentityNo(), credit.getStatus().getMessage(), credit.getCreditLimit());
 		return buildOKResponseEntity(creditResultDTO);
 	}
-
 }
