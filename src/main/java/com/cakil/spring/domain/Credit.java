@@ -1,6 +1,6 @@
 package com.cakil.spring.domain;
 
-import com.cakil.spring.util.Enum;
+import com.cakil.spring.interfaces.util.Enum.ApplicationStatus;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Where;
@@ -20,7 +20,7 @@ public class Credit extends AbstractBaseEntity {
 
 	@Column(name = "APPLICATION_STATUS")
 	@Enumerated(EnumType.STRING)
-	private Enum.ApplicationStatus status;
+	private ApplicationStatus status;
 
 	@Column(name = "CREDIT_LIMIT")
 	private Integer creditLimit;
@@ -33,7 +33,7 @@ public class Credit extends AbstractBaseEntity {
 		super();
 	}
 
-	public Credit(Integer score, Enum.ApplicationStatus status, Integer creditLimit, Customer customer) {
+	public Credit(Integer score, ApplicationStatus status, Integer creditLimit, Customer customer) {
 		super();
 		this.score = score;
 		this.status = status;
