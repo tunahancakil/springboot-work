@@ -1,11 +1,12 @@
-package com.cakil.spring.service.impl;
+package com.cakil.spring.application.service.impl;
 
+import com.cakil.spring.application.service.CreditService;
 import com.cakil.spring.domain.Credit;
-import com.cakil.spring.exceptions.DatabaseGeneralException;
-import com.cakil.spring.exceptions.SmsException;
-import com.cakil.spring.repositories.CreditRepository;
-import com.cakil.spring.service.CreditService;
-import com.cakil.spring.util.Constants;
+import com.cakil.spring.domain.exceptions.DatabaseGeneralException;
+import com.cakil.spring.domain.exceptions.SmsException;
+import com.cakil.spring.interfaces.repositories.CreditRepository;
+
+import com.cakil.spring.interfaces.util.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

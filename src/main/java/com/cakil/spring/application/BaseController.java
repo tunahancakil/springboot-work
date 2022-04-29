@@ -1,6 +1,6 @@
-package com.cakil.spring.controller;
+package com.cakil.spring.application;
 
-import com.cakil.spring.service.Loggable;
+import com.cakil.spring.application.service.Loggable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 

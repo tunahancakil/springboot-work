@@ -1,4 +1,4 @@
-package com.cakil.spring.exceptions;
+package com.cakil.spring.domain.exceptions;
 
 public class DatabaseGeneralException extends RuntimeException {
 

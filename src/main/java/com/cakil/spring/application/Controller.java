@@ -1,13 +1,13 @@
-package com.cakil.spring.controller;
+package com.cakil.spring.application;
 
 import com.cakil.spring.domain.Credit;
 import com.cakil.spring.domain.Customer;
-import com.cakil.spring.model.CreditDTO;
-import com.cakil.spring.model.CreditResultDTO;
-import com.cakil.spring.service.CreditService;
-import com.cakil.spring.service.CustomerService;
-import com.cakil.spring.service.impl.CreditResultDTOService;
-import com.cakil.spring.util.Enum.ApplicationStatus;
+import com.cakil.spring.application.service.CreditService;
+import com.cakil.spring.application.service.CustomerService;
+import com.cakil.spring.application.service.impl.CreditResultDTOService;
+import com.cakil.spring.interfaces.model.CreditDTO;
+import com.cakil.spring.interfaces.model.CreditResultDTO;
+import com.cakil.spring.interfaces.util.Enum.ApplicationStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

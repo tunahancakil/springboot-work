@@ -1,12 +1,12 @@
-package com.cakil.spring.service.impl;
+package com.cakil.spring.application.service.impl;
 
+import com.cakil.spring.application.service.BaseService;
+import com.cakil.spring.application.service.Loggable;
 import com.cakil.spring.domain.AbstractBaseEntity;
-import com.cakil.spring.exceptions.DatabaseDataIntegrityException;
-import com.cakil.spring.exceptions.DatabaseEntityNotFoundException;
-import com.cakil.spring.exceptions.DatabaseGeneralException;
-import com.cakil.spring.repositories.BaseRepository;
-import com.cakil.spring.service.BaseService;
-import com.cakil.spring.service.Loggable;
+import com.cakil.spring.domain.exceptions.DatabaseDataIntegrityException;
+import com.cakil.spring.domain.exceptions.DatabaseEntityNotFoundException;
+import com.cakil.spring.domain.exceptions.DatabaseGeneralException;
+import com.cakil.spring.interfaces.repositories.BaseRepository;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +17,7 @@ import java.util.Optional;
 
 public class BaseServiceImpl<T extends BaseRepository<E>, E extends AbstractBaseEntity> implements BaseService<E>, Loggable {
 
-	private T repository;
+	private final T repository;
 
 	public BaseServiceImpl(T repository) {
 		this.repository = repository;

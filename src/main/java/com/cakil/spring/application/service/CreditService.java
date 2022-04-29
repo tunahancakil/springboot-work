@@ -1,8 +1,8 @@
-package com.cakil.spring.service;
+package com.cakil.spring.application.service;
 
 import com.cakil.spring.domain.Credit;
-import com.cakil.spring.exceptions.DatabaseGeneralException;
-import com.cakil.spring.exceptions.SmsException;
+import com.cakil.spring.domain.exceptions.DatabaseGeneralException;
+import com.cakil.spring.domain.exceptions.SmsException;
 
 public interface CreditService extends BaseService<Credit> {
 

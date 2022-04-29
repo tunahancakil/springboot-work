@@ -1,4 +1,4 @@
-package com.cakil.spring.repositories;
+package com.cakil.spring.interfaces.repositories;
 
 import com.cakil.spring.domain.AbstractBaseEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

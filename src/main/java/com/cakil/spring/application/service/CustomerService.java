@@ -1,4 +1,4 @@
-package com.cakil.spring.service;
+package com.cakil.spring.application.service;
 
 import com.cakil.spring.domain.Customer;
 

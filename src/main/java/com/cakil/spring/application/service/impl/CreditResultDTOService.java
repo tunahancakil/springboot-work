@@ -1,6 +1,6 @@
-package com.cakil.spring.service.impl;
+package com.cakil.spring.application.service.impl;
 
-import com.cakil.spring.model.CreditResultDTO;
+import com.cakil.spring.interfaces.model.CreditResultDTO;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,11 +1,11 @@
-package com.cakil.spring.controller;
+package com.cakil.spring.application;
 
-import com.cakil.spring.exceptions.DatabaseDataIntegrityException;
-import com.cakil.spring.exceptions.DatabaseEntityNotFoundException;
-import com.cakil.spring.exceptions.DatabaseGeneralException;
-import com.cakil.spring.exceptions.SmsException;
-import com.cakil.spring.model.ErrorMessage;
-import com.cakil.spring.util.Constants;
+import com.cakil.spring.domain.exceptions.DatabaseDataIntegrityException;
+import com.cakil.spring.domain.exceptions.DatabaseEntityNotFoundException;
+import com.cakil.spring.domain.exceptions.DatabaseGeneralException;
+import com.cakil.spring.domain.exceptions.SmsException;
+import com.cakil.spring.interfaces.model.ErrorMessage;
+import com.cakil.spring.interfaces.util.Constants;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
