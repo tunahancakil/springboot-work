@@ -1,4 +1,4 @@
-package com.cakil.spring.model;
+package com.cakil.spring.interfaces.model;
 
 import lombok.Getter;
 import lombok.Setter;

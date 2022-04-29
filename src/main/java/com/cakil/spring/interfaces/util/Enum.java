@@ -1,4 +1,4 @@
-package com.cakil.spring.util;
+package com.cakil.spring.interfaces.util;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,8 +11,8 @@ public class Enum {
         APPROVE("APPROVE", "Your application has been approved."),
         REJECTED("REJECTED", "Your application has been rejected.");
 
-        private String value;
-        private String message;
+        private final String value;
+        private final String message;
 
         ApplicationStatus(String value, String message) {
             this.value = value;

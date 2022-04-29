@@ -1,6 +1,6 @@
-package com.cakil.spring.model;
+package com.cakil.spring.interfaces.model;
 
-import com.cakil.spring.util.DateTimeUtils;
+import com.cakil.spring.interfaces.util.DateTimeUtils;
 import lombok.Getter;
 import lombok.Setter;
 

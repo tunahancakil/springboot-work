@@ -1,4 +1,4 @@
-package com.cakil.spring.util;
+package com.cakil.spring.interfaces.util;
 
 public class Constants {
 
